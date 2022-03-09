@@ -2,8 +2,8 @@ package loja.testes;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
 import loja.desconto.CalculadoraDeDesconto;
+import loja.situacao.Pedido;
 
 public class TestaDesconto {
 	

@@ -2,7 +2,7 @@ package loja.desconto;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
+import loja.situacao.Pedido;
 
 public abstract class Desconto {
 	

@@ -7,8 +7,8 @@ import java.math.RoundingMode;
 
 import org.junit.jupiter.api.Test;
 
-import loja.Pedido;
 import loja.desconto.CalculadoraDeDesconto;
+import loja.situacao.Pedido;
 
 class DescontoTest {
 

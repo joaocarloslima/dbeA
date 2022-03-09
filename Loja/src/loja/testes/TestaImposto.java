@@ -2,10 +2,10 @@ package loja.testes;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
 import loja.imposto.CalculadoraDeImposto;
 import loja.imposto.Icms;
 import loja.imposto.Iss;
+import loja.situacao.Pedido;
 
 public class TestaImposto {
 	

@@ -2,7 +2,7 @@ package loja.imposto;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
+import loja.situacao.Pedido;
 
 public interface Imposto {
 	
