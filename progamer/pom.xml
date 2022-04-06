@@ -36,6 +36,11 @@
 	    <artifactId>primefaces</artifactId>
 	    <version>11.0.0</version>
 	</dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
     
   </dependencies>
   <dependencyManagement>

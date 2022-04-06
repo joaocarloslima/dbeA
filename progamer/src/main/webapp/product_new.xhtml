@@ -9,6 +9,7 @@
 
 <body style="background-color: #EEE" >
 
+	<!-- MENU -->
 	<div class="card">
 		<h:form>
 			<p:tabMenu activeIndex="1">
@@ -26,6 +27,8 @@
 	</div>
 
 
+	<!-- FORM -->
+	<h:form>
 	<p:card style="width: 25em; margin: 1em auto">
 		
 		<f:facet name="title">New Setup</f:facet>
@@ -33,25 +36,25 @@
 		<div class="ui-fluid">
 		    <div class="p-field">
 		        <label for="name">Name</label>
-		        <p:inputText id="name" type="text" />
+		        <p:inputText value="#{setupBean.setup.name}" id="name" type="text" />
 		    </div>
 		    <div class="p-field">
 		        <label for="description">Description</label>
-		        <p:inputTextarea id="description" type="text" />
+		        <p:inputTextarea value="#{setupBean.setup.description}" id="description" type="text" />
 		    </div>
 		    <div class="p-field">
 		        <label for="price">Price</label>
-		       	<p:inputNumber id="price" symbol="R$ " decimalSeparator="," thousandSeparator="." />
+		       	<p:inputNumber value="#{setupBean.setup.price}" id="price" symbol="R$ " decimalSeparator="," thousandSeparator="." />
 		    </div>
 		</div>
 		
 		<f:facet name="footer">
-			<p:commandButton icon="pi pi-check" value="Save" />
+			<p:commandButton action="#{setupBean.save()}" icon="pi pi-check" value="Save" />
 			<p:commandButton icon="pi pi-times" value="Cancel"
 				styleClass="ui-button-secondary" style="margin-left: .5em" />
 		</f:facet>
 	</p:card>
-
+	</h:form>
 
 
 
