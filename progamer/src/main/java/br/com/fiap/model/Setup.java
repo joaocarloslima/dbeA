@@ -15,6 +15,14 @@ public class Setup {
 	private String name = "Meu Setup";
 	private String description = "Descrição do setup";
 	private BigDecimal price = new BigDecimal(2000);
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
