@@ -7,6 +7,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import org.primefaces.model.file.UploadedFile;
+
 import br.com.fiap.dao.SetupDao;
 import br.com.fiap.model.Setup;
 
@@ -16,8 +18,12 @@ public class SetupBean {
 
 	private Setup setup = new Setup();
 	
+	private UploadedFile image;
+	
 	public String save() {
 		System.out.println(setup);
+		System.out.println(image.getFileName());
+		
 		new SetupDao().create(setup);
 		
 		FacesContext
@@ -38,6 +44,14 @@ public class SetupBean {
 
 	public void setSetup(Setup setup) {
 		this.setup = setup;
+	}
+
+	public UploadedFile getImage() {
+		return image;
+	}
+
+	public void setImage(UploadedFile image) {
+		this.image = image;
 	}
 
 }
