@@ -11,6 +11,7 @@ import org.primefaces.model.file.UploadedFile;
 
 import br.com.fiap.dao.SetupDao;
 import br.com.fiap.model.Setup;
+import br.com.fiap.service.UploadService;
 
 @Named
 @RequestScoped
@@ -22,7 +23,9 @@ public class SetupBean {
 	
 	public String save() {
 		System.out.println(setup);
-		System.out.println(image.getFileName());
+		
+		String imagePath = UploadService.write(image, "setups");
+		setup.setImagePath(imagePath);
 		
 		new SetupDao().create(setup);
 		
