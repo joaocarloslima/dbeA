@@ -5,6 +5,7 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.primefaces.model.file.UploadedFile;
@@ -16,31 +17,32 @@ import br.com.fiap.service.UploadService;
 @Named
 @RequestScoped
 public class SetupBean {
-
+	
 	private Setup setup = new Setup();
 	
 	private UploadedFile image;
 	
+	@Inject
+	private SetupDao dao;
+
 	public String save() {
 		System.out.println(setup);
 		
 		String imagePath = UploadService.write(image, "setups");
+		
 		setup.setImagePath(imagePath);
 		
-		new SetupDao().create(setup);
-		
-		FacesContext
-			.getCurrentInstance()
-			.addMessage(null, 
-					new FacesMessage("Setup cadastrado com sucesso"));
+		dao.create(setup);
+
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Setup cadastrado com sucesso"));
 		
 		return "setups";
 	}
 	
-	public List<Setup> getSetups(){
-		return new SetupDao().listAll();
+	public List<Setup> getSetups() {
+		return dao.listAll();
 	}
-
+	
 	public Setup getSetup() {
 		return setup;
 	}
@@ -48,7 +50,7 @@ public class SetupBean {
 	public void setSetup(Setup setup) {
 		this.setup = setup;
 	}
-
+	
 	public UploadedFile getImage() {
 		return image;
 	}
@@ -56,5 +58,4 @@ public class SetupBean {
 	public void setImage(UploadedFile image) {
 		this.image = image;
 	}
-
 }
