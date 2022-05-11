@@ -6,7 +6,27 @@
       xmlns:p="http://primefaces.org/ui"> 
 
 <h:head><title>Progamer</title></h:head> 
-<body style="background-color: #EEE"> 
+<body style="background-color: #EEE">
+
+	<!-- TOOLBAR -->
+	<div class="card">
+	    <h:form>
+	        <p:toolbar>
+	            <p:toolbarGroup>
+	            	<h1>Progamer</h1>
+	            </p:toolbarGroup>
+	
+	            <p:toolbarGroup align="right">
+	                <p:menuButton value="#{user.email}">
+	                    <p:menuitem value="profile" action="profile.xhtml" icon="pi pi-user"/>
+	                    <p:menuitem value="logout" action="#{userBean.logout()}" icon="pi pi-sign-out"/>
+	                </p:menuButton>
+	            </p:toolbarGroup>
+	        </p:toolbar>
+	    </h:form>
+	</div>
+
+ 	<!-- MENU -->
 	<div class="card">
 		<h:form>
 			<p:tabMenu activeIndex="#{param.i}">

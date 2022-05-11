@@ -43,6 +43,34 @@ public class SetupBean {
 		return dao.listAll();
 	}
 	
+	public String delete(Setup setup) {
+		dao.remove(setup);
+		
+		showMessage("Setup apagado com sucesso");
+		return "setups?faces-redirect=true";
+	}
+
+	private void showMessage(String msg) {
+		FacesContext
+			.getCurrentInstance()
+			.getExternalContext()
+			.getFlash()
+			.setKeepMessages(true);
+		
+		FacesContext
+			.getCurrentInstance()
+			.addMessage(null, new FacesMessage(msg));
+	}
+	
+	public String edit() {
+		dao.update(setup);
+		
+		showMessage("Setup atualizado com sucesso");
+		return "setups?faces-redirect=true";
+
+		
+	}
+	
 	public Setup getSetup() {
 		return setup;
 	}

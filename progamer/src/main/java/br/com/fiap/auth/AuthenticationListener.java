@@ -15,7 +15,7 @@ public class AuthenticationListener implements PhaseListener {
 	public void afterPhase(PhaseEvent arg0) {
 		
 		String page = pegarPaginaAtual();
-		if (page.equals("/login.xhtml")) return;
+		if (page.equals("/login.xhtml") || page.equals("/user_new.xhtml") ) return;
 		
 		User user = pegarUsuarioNaSessao();
 		if (user != null) return;

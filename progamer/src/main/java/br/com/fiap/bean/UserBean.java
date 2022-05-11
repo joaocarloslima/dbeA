@@ -50,6 +50,18 @@ public class UserBean {
 		return "login?faces-redirect=true";
 			
 	}
+	
+	public String logout() {
+		FacesContext
+			.getCurrentInstance()
+			.getExternalContext()
+			.getSessionMap()
+			.remove("user");
+		
+		return "login?faces-redirect=true";
+	}
+	
+	
 
 	private void mostrarMensagem() {
 		FacesContext

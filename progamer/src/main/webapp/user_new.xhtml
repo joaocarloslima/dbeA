@@ -4,8 +4,13 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-<ui:composition template="/_template.xhtml">
-	<ui:define name="content">
+	
+<h:head>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+</h:head>
+
+<body>
+
 		<p:messages id="msg">
 			<p:autoUpdate />
 		</p:messages>
@@ -66,6 +71,7 @@
 				</f:facet>
 			</p:card>
 		</h:form>
-	</ui:define>
-</ui:composition>
+
+</body>
+
 </html>

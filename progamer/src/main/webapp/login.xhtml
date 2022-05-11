@@ -23,10 +23,8 @@
 						<p:inputText 
 						value="#{userBean.user.email}" 
 						id="email"
-						type="text" 
-						required="true"
-						requiredMessage="O e-mail é obrigatório">
-							<f:ajax event="blur" render="msg"/>
+						type="text"
+						> 
 						</p:inputText>
 					</div>
 					<div class="p-field">
@@ -34,10 +32,7 @@
 						<p:inputText 
 						value="#{userBean.user.password}" 
 						id="password"
-						type="password" 
-						required="true"
-						requiredMessage="A senha é obrigatória">
-							<f:ajax event="blur" render="msg"/>
+						type="password"> 
 						</p:inputText>
 					</div>
 				</div>
